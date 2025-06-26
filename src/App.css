@@ -1,23 +1,31 @@
-/* Estilos base */
+/* Reset básico para eliminar márgenes por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo a pantalla completa */
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  width: 100vw; /* Ancho completo del viewport */
   background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  background-attachment: fixed; /* Fijo para dispositivos con altura dinámica */
   font-family: 'Arial', sans-serif;
   padding: 20px;
-  overflow: hidden;
+  overflow-x: hidden; /* Evita scroll horizontal */
 }
 
-h1 {
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  margin-bottom: 40px;
+/* Asegura que el contenido no exceda el ancho */
+h1, .flip-button {
+  max-width: 100%;
 }
 
-/* Botón */
+/* Resto de tus estilos (se mantienen igual) */
 .flip-button {
   margin-top: 40px;
   padding: 15px 30px;
@@ -31,6 +39,7 @@ h1 {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s, box-shadow 0.2s;
 }
+
 
 .flip-button:active {
   transform: scale(0.95);
